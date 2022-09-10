@@ -31,8 +31,24 @@ const useWordle = (solution) => {
      * Handle Keyup events and track current guess
      * if user presses enter,adds a new guess
      */
-    const handleKeyup = () => {
-
+    const handleKeyup = ({key}) => {
+        //Backspace deletiion
+        if(key === 'Backspace'){
+            setCurrentGuess((prev) => {
+                //removes the last char
+                return prev.slice(0,-1)
+            })
+            return
+        }
+        //ANY SINGLE LETTER VALUE
+        if(/^[a-zA-Z]$/.test(key)){
+            //currenGuess < 5
+            if(currentGuess.length < 5){
+                setCurrentGuess((prev) => {
+                    return prev + key
+                })
+            }
+        }
     }
 
 
