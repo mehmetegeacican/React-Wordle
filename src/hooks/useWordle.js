@@ -15,7 +15,26 @@ const useWordle = (solution) => {
      * e.g [{key: 'a', color: 'yellow'}]
     */
     const formatGuess = () => {
-        console.log("Formatting the guess - ", currentGuess);
+        let solutionArray = [...solution]
+        let formattedGuess = [...currentGuess].map((letter) => {
+            return {key:letter,color: 'grey'}
+        })
+        //find any green letters
+        formattedGuess.forEach((letter,index) => {
+            if(solutionArray[index] === letter.key){
+                formattedGuess[index].color = 'green'
+                solutionArray[index] = null
+            }
+        })
+        //find any yellow letters
+        formattedGuess.forEach((letter,index) => {
+            if(solutionArray.includes(letter.key) && letter.color !== 'green'){
+                formattedGuess[index].color = 'yellow'
+                solutionArray[solutionArray.indexOf(letter.key)] = null
+            }
+        })
+
+        return formattedGuess
     }
 
     /**
@@ -49,7 +68,8 @@ const useWordle = (solution) => {
                 console.log("Word must be 5 characters long");
                 return
             }
-            formatGuess()
+            const formatted = formatGuess()
+            console.log(formatted);
         }
         //Backspace deletiion
         if(key === 'Backspace'){
