@@ -22,6 +22,8 @@ Open [http://localhost:3001/solutions](http://localhost:3001/solutions) to view 
 
 ### `YOU MUST FIRST RUN THE JSON SERVER AND THEN THE APPLICATION IN ORDER TO RECEIVE THE WORDS FROM THE SERVER`
 
-## Used Technologies
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="20" height="20"/>&nbsp;React.js -- A Javascript library that is used for building User Interfaces. <br/>
+## Used Tool
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>&nbsp;React.js -- A Javascript library that is used for building User Interfaces. <br/>
+
 ## Screenshots
+<img src="./wordle.PNG" alt="WORDLE" width = 45% height = 45%></img>
