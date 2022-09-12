@@ -9,13 +9,21 @@ export default function Wordle({ solution }) {
   useEffect(() => {
     window.addEventListener("keyup", handleKeyup);
 
+
+    if(isCorrect){
+      console.log("YOU WON!!!");
+      window.removeEventListener("keyup", handleKeyup);
+    }
+
+    if(turn > 5){
+      console.log("YOU LOST,SORRY!");
+      window.removeEventListener("keyup",handleKeyup)
+    }
+
     //DETACHES THE EVENT LISTENER
     return () => window.removeEventListener("keyup", handleKeyup);
-  }, [handleKeyup]);
+  }, [handleKeyup,isCorrect]);
 
-  useEffect(() => {
-    console.log(guesses,turn,isCorrect);
-  },[guesses,turn,isCorrect])
 
   return (
     <div>
