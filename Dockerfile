@@ -4,7 +4,7 @@ ENV NODE_ENV development
 WORKDIR /usr/src/app
 COPY package*.json ./
 COPY . . 
-EXPOSE 3001
 
 RUN npm i
+
 CMD ["npm","run","start"]

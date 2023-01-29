@@ -6,3 +6,12 @@ services:
     build: .
     ports:
       - "3000:3000"
+  json-server:
+    container_name: json-server
+    build: ./data
+    image: wordle-json-server
+    ports:
+      - "3001:3001"
+    volumes:
+      - /db.json:/db.json
+    command: json-server --watch ./db.json --port 3001 --host 0.0.0.0
