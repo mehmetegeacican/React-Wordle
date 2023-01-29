@@ -3,7 +3,7 @@ ENV NODE_ENV development
 #CONFIG FOR THE REACT 
 WORKDIR /usr/src/app
 COPY package*.json ./
-COPY . .
+COPY . . 
 EXPOSE 3001
 
 RUN npm i
